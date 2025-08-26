@@ -1,13 +1,11 @@
+
 #include <stdio.h>
 
 int main() {
 
-    // Desafio SUPER TRUNDO: 
-    // CRIAR UM JOGO DE CARTAS CUJO CONTEUDO SEJA PREENCHIDO PELO USUÁRIO E CADA CARTA SEJA REPRESENTADA POR UM ESTADO E CIDADE
 
-    // INICIANDO A CONFECÇÃO DAS CARTAS
 
-     // PRIMEIRA CARTA:
+    // PRIMEIRA CARTA:
     char estado1[20];
     char codigo_da_carta1[4]; // 3 letras + '\0'
     char nome_da_cidade1[20];
@@ -15,6 +13,8 @@ int main() {
     int populacao1;    
     float PIB1;
     int numero_de_pontos_turisticos1;
+    float densidade_populacional1;
+    int PIBPERCAPTA1;
 
     // SEGUNDA CARTA:
     char estado2[20];
@@ -24,9 +24,11 @@ int main() {
     float area2;
     float PIB2;
     int numero_de_pontos_turisticos2;
+    float densidade_populacional2;
+    int PIBPERCAPTA2;
 
     // Entrada de dados para a primeira carta
-    printf("Dados do primeiro estado / primeira carta:\n");
+    printf("*** Dados do primeiro estado / primeira carta: ***\n");
 
     printf("Digite o nome do Estado: \n");
     scanf("%s", estado1);
@@ -51,24 +53,30 @@ int main() {
 
     // COMANDO PARA IMPRIMIR INFORMAÇÕES PREENCHIDAS PELO USUÁRIO PARA CONFECÇÃO DA PRIMEIRA CARTA.
 
-    printf("DADOS DA PRIMEIRA CARTA: \n");
+    printf("*** DADOS DA PRIMEIRA CARTA: ***\n");
 
     printf("ESTADO: %s\n", estado1);
     printf("CIDADE: %s\n", nome_da_cidade1);
     printf("POPULAÇÃO: %d\n", populacao1);
     printf("AREA EM KM: %.2f km²\n", area1);
-    printf("PIB: %.2f bilhões de reais\n", PIB1);
+    printf("PIB: %.2f milhoes de reais\n", PIB1);
     printf("QUANTIDADE DE PONTOS TURISTICOS: %d\n", numero_de_pontos_turisticos1);
 
+      // CALCULO PARA DESCOBRIR DENSIDADE POPULACIONAL E PIB PER CAPTA COM BASE NAS INFORMAÇÕES INSERIDAS PELO USUÁRIO
+        densidade_populacional1 = (float)(populacao1 / area1); 
+        PIBPERCAPTA1 = (float)(PIB1 / populacao1);
+
+      // IMPRESSÃO DO RESULTADO DOS CALCULOS ACIMA
+    printf("Densidade Populacional: %.4f hab/km²\n", densidade_populacional1);
+        printf("PIB per Capta: %d reais\n", PIBPERCAPTA1);
     
     
     // FIM DA IMPRESSÃO DA PRIMEIRA CARTA.
 
 
-
     // Entrada de dados da segunda carta:
 
-    printf("Dados do segundo estado / segunda carta:\n");
+    printf("*** Dados do segundo estado / segunda carta: ***\n");
 
     printf("Digite o nome do Estado: \n");
     scanf("%s", estado2);
@@ -93,16 +101,24 @@ int main() {
    
 // COMANDO PARA IMPRIMIR INFORMAÇÕES PREENCHIDAS PELO USUÁRIO PARA CONFECÇÃO DA SEGUNDA CARTA.
 
-    printf("DADOS DA SEGUNDA CARTA: \n");
+    printf("*** DADOS DA SEGUNDA CARTA: ***\n");
 
     printf("ESTADO: %s\n", estado2);
     printf("CIDADE: %s\n", nome_da_cidade2);
     printf("POPULAÇÃO: %d\n", populacao2);
     printf("AREA EM KM: %.2f km²\n", area2);
-    printf("PIB: %.2f bilhões de reais\n", PIB2);
+    printf("PIB: %.2f milhoes de reais\n", PIB2);
     printf("QUANTIDADE DE PONTOS TURISTICOS: %d\n", numero_de_pontos_turisticos2);
 
+    // CALCULO PARA DEFINIR DENSIDADE POPULACIONAL E PIB PER CAPTA COM BASE NAS INFORMAÇÕES INSERIDAS PELO USUÁRIO
+        densidade_populacional2 = (float)(populacao2 / area2); 
+        PIBPERCAPTA2 = (float)(PIB2 / populacao2);
+
+      // IMPRESSÃO DO RESULTADO DOS CALCULOS ACIMA
+    printf("Densidade Populacional: %.4f hab/km²\n", densidade_populacional2);
+        printf("PIB per Capta: %d reais\n", PIBPERCAPTA2);
 
 
     return 0;
 }
+

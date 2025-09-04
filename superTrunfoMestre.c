@@ -102,7 +102,7 @@ int main() {
     printf("\n"); // espaço entre as informaçoes para melhor visualizaçao
   
     inversoDP1 = area1 / populacao1; // CALCULO DO INVERSO DA DENSIDADE POPULACIONAL PARA SOMA DO SUPER PODER        
-    SP1 = populacao1 + area1 + PIB1 + numero_de_pontos_turisticos1 + inversoDP1; // calculo SUPER PODER
+    SP1 = populacao1 + area1 + PIB1 + numero_de_pontos_turisticos1 + inversoDP1 + PIBPERCAPTA2; // calculo SUPER PODER
     printf("*** O SUPER PODER DA CARTA %3s É: %.6f ***\n", codigo_da_carta1, SP1);
 
 
@@ -155,7 +155,7 @@ int main() {
     printf("PIB PERCAPTA: %.2f reais\n", PIBPERCAPTA2); // IMPRESSAO RESULTADO PIB PERCAPTA
 
     inversoDP2 = area2 / populacao2; // CALCULO DO INVERSO DA DENSIDADE POPULACIONAL PARA SOMA DO SUPER PODER        
-    SP2 = populacao2 + area2 + PIB2 + numero_de_pontos_turisticos2 + inversoDP2; // calculo SUPER PODER
+    SP2 = populacao2 + area2 + PIB2 + numero_de_pontos_turisticos2 + inversoDP2 + PIBPERCAPTA2; // calculo SUPER PODER
     printf("*** O SUPER PODER DA CARTA %3s É: %.6f ***\n", codigo_da_carta2, SP2);
 
     // FIM DA IMPRESSAO DA SEGUNDA CARTA
@@ -177,7 +177,7 @@ int main() {
     if (area1 > area2) {
       printf("AREA (KM²): %f vs %f = CARTA %3s VENCEU! \n", area1, area2, codigo_da_carta1);
     } else if (area2 > area1) {
-      printf("AREA (KM²): %f vs %f = CARTA %3s VENCEU! \n", area1, area2, codigo_da_carta1);
+      printf("AREA (KM²): %f vs %f = CARTA %3s VENCEU! \n", area1, area2, codigo_da_carta2);
     } else if (area1 == area2) {
       printf("AREA (KM²): DEU EMPATE! \n");
     };
@@ -185,7 +185,7 @@ int main() {
     if (PIB1 > PIB2) {
       printf("PIB: %2.f vs %.2f = CARTA %3s VENCEU! \n",PIB1, PIB2, codigo_da_carta1);
     } else if (PIB2 > PIB1) {
-      printf("PIB: %2.f vs %.2f = CARTA %3s VENCEU! \n",PIB1, PIB2, codigo_da_carta1);
+      printf("PIB: %2.f vs %.2f = CARTA %3s VENCEU! \n",PIB1, PIB2, codigo_da_carta2);
     }else if (PIB1 == PIB2) {
       printf("PIB: DEU EMPATE! \n");
     };
@@ -193,17 +193,25 @@ int main() {
     if (numero_de_pontos_turisticos1 > numero_de_pontos_turisticos2) {
       printf("PONTOS TURISTICOS: %d vs %d = CARTA %3s VENCEU! \n",numero_de_pontos_turisticos1, numero_de_pontos_turisticos2, codigo_da_carta1);
     } else if (numero_de_pontos_turisticos2 > numero_de_pontos_turisticos1) {
-      printf("PONTOS TURISTICOS: %d vs %d = CARTA %3s VENCEU! \n",numero_de_pontos_turisticos1, numero_de_pontos_turisticos2, codigo_da_carta1);
+      printf("PONTOS TURISTICOS: %d vs %d = CARTA %3s VENCEU! \n",numero_de_pontos_turisticos1, numero_de_pontos_turisticos2, codigo_da_carta2);
     } else if (numero_de_pontos_turisticos1 == numero_de_pontos_turisticos2) {
       printf("PONTOS TURISTICOS: DEU EMPATE! \n");
     };
 
     if (inversoDP1 < inversoDP2) {
-      printf("DENSIDADE POPULACIONAL (INVERSO): %.6f vs %.6f = CARTA %3s VENCEU! \n", inversoDP1, inversoDP2, codigo_da_carta2);
+      printf("DENSIDADE POPULACIONAL (INVERSO): %.6f vs %.6f = CARTA %3s VENCEU! \n", inversoDP1, inversoDP2, codigo_da_carta1);
     } else if (inversoDP2 < inversoDP1) {
-      printf("DENSIDADE POPULACIONAL (INVERSO): %.6f vs %.6f = CARTA %3s VENCEU! \n",inversoDP2, inversoDP1, codigo_da_carta2);
+      printf("DENSIDADE POPULACIONAL (INVERSO): %.6f vs %.6f = CARTA %3s VENCEU! \n",inversoDP1, inversoDP2, codigo_da_carta2);
     } else if (inversoDP1 == inversoDP2) {
       printf("DENSIDADE POPULACIONAL (INVERSO): DEU EMPATE! \n");
+    };
+
+    if (PIBPERCAPTA1 > PIBPERCAPTA2) {
+      printf("PIB PERCAPTA: %2.f vs %.2f = CARTA %3s VENCEU! \n",PIBPERCAPTA1, PIBPERCAPTA2, codigo_da_carta1);
+    } else if (PIBPERCAPTA2 > PIBPERCAPTA1) {
+      printf("PIB: %2.f vs %.2f = CARTA %3s VENCEU! \n",PIBPERCAPTA1, PIBPERCAPTA2, codigo_da_carta2);
+    }else if (PIBPERCAPTA1 == PIBPERCAPTA2) {
+      printf("PIB: DEU EMPATE! \n");
     };
 
     if (SP1 > SP2) {
